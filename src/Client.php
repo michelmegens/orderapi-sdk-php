@@ -129,7 +129,7 @@ class Client
     /**
      * @param string $paymentId
      *
-     * @return StartRequest
+     * @return ProceedRequest
      */
     public function createProceedRequest($paymentId)
     {
@@ -272,6 +272,7 @@ class Client
             $this->soapRequest[$requestName] = $this->soapClient->__getLastRequest();
             $this->soapResponse[$requestName] = $this->soapClient->__getLastResponse();
 
+            //var_dump($request);
             return $result;
         } catch (\Throwable $t) {
             throw $t;
